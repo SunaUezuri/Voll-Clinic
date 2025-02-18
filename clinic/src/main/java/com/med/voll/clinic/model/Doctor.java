@@ -15,7 +15,6 @@ public class Doctor {
     //Class attributes
     private String name;
     private String email;
-    private String contact;
     private String crm;
     private Specialty specialty;
     private Address address;

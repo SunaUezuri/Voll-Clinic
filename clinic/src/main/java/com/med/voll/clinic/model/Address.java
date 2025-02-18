@@ -12,11 +12,12 @@ import lombok.Setter;
 public class Address {
 
     //Class Attributes
-    private int number;
     private String logradouro;
-    private String complement;
     private String neighborhood;
+    private String cep;
     private String city;
     private String uf;
-    private String cep;
+    private int number;
+    private String complement;
+
 }

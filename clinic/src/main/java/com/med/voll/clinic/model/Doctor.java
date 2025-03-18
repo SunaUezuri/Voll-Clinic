@@ -1,8 +1,7 @@
 package com.med.voll.clinic.model;
 
 import com.med.voll.clinic.model.enums.Specialty;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,15 +17,29 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 @Table(name = "T_VOLL_DOCTOR")
 public class Doctor {
 
     //Class attributes
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_doctor")
     private Long id;
+
+    @Column(name = "nm_doctor", nullable = false)
     private String name;
+
+    @Column(name = "ds_email", nullable = false)
     private String email;
+
+    @Column(name = "nr_crm", nullable = false)
     private String crm;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nm_speacialty", nullable = false)
     private Specialty specialty;
+
+    @Embedded
+    @Column(name = "dc_address")
     private Address address;
 }

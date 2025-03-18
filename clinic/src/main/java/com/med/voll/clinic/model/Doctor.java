@@ -2,10 +2,7 @@ package com.med.voll.clinic.model;
 
 import com.med.voll.clinic.model.enums.Specialty;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 //Using annotatios for better perfomance and practicality
 /*
@@ -15,8 +12,8 @@ import lombok.Setter;
 * such as getters, setters and constructors
 */
 @Getter @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor @AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "T_VOLL_DOCTOR")
 public class Doctor {

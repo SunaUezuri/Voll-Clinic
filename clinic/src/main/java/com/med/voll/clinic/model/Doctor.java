@@ -27,8 +27,11 @@ public class Doctor {
     @Column(name = "nm_doctor", nullable = false)
     private String name;
 
-    @Column(name = "ds_email", nullable = false)
+    @Column(name = "ds_email", nullable = false, unique = true)
     private String email;
+
+    @Column(name = "nr_contact", nullable = false)
+    private String contactNumber;
 
     @Column(name = "nr_crm", nullable = false)
     private String crm;
@@ -43,6 +46,7 @@ public class Doctor {
     public Doctor(DoctorDto json) {
         this.name = json.name();
         this.email = json.email();
+        this.contactNumber = json.contactNumber();
         this.crm = json.crm();
         this.specialty = json.specialty();
         this.address = new Address(json.address());

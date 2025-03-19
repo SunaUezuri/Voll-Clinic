@@ -3,6 +3,7 @@ package com.med.voll.clinic.controller;
 import com.med.voll.clinic.dto.DoctorDto;
 import com.med.voll.clinic.model.Doctor;
 import com.med.voll.clinic.repository.DoctorRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +22,7 @@ public class DoctorController {
     //Using annotation Post to register a doctor
     @PostMapping
     @Transactional
-    public void register(@RequestBody DoctorDto json) {
+    public void register(@RequestBody @Valid DoctorDto json) {
         repository.save(new Doctor(json));
     }
 

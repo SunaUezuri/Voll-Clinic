@@ -1,5 +1,6 @@
 package com.med.voll.clinic.model;
 
+import com.med.voll.clinic.dto.PatientDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +16,7 @@ public class Patient {
     private Long id;
 
     @Column(name = "nm_patient", nullable = false)
-    private String nome;
+    private String name;
 
     @Column(name = "nm_patient", nullable = false)
     private String email;
@@ -28,5 +29,13 @@ public class Patient {
 
     @Embedded
     private Address address;
+
+    public Patient(PatientDto json) {
+        this.name = json.name();
+        this.email = json.email();
+        this.cpf = json.cpf();
+        this.contactNumber = json.contactNumber();
+        this.address = new Address(json.address());
+    }
 
 }

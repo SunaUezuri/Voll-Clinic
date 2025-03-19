@@ -11,7 +11,7 @@ import org.hibernate.validator.constraints.UniqueElements;
 public record DoctorDto(
                         @NotBlank
                         String name,
-                        @NotBlank @Email @UniqueElements
+                        @NotBlank @Email
                         String email,
                         @NotBlank
                         String contactNumber,

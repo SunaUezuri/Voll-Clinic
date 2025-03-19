@@ -5,6 +5,6 @@ public record AddressDto(String logradouro,
                          String cep,
                          String city,
                          String uf,
-                         String number,
+                         String houseNumber,
                          String complement) {
 }

@@ -1,5 +1,6 @@
 package com.med.voll.clinic.model;
 
+import com.med.voll.clinic.dto.DoctorDto;
 import com.med.voll.clinic.model.enums.Specialty;
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,12 +15,12 @@ import lombok.*;
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-@Entity
-@Table(name = "T_VOLL_DOCTOR")
+@Entity @Table(name = "T_VOLL_DOCTOR")
+@SequenceGenerator(name = "doctor", sequenceName = "SQ_T_VOLL_DOCTOR", allocationSize = 1)
 public class Doctor {
 
     //Class attributes
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "doctor")
     @Column(name = "id_doctor")
     private Long id;
 
@@ -33,10 +34,17 @@ public class Doctor {
     private String crm;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "nm_speacialty", nullable = false)
+    @Column(name = "nm_specialty", nullable = false)
     private Specialty specialty;
 
     @Embedded
-    @Column(name = "dc_address")
     private Address address;
+
+    public Doctor(DoctorDto json) {
+        this.name = json.name();
+        this.email = json.email();
+        this.crm = json.crm();
+        this.specialty = json.specialty();
+        this.address = new Address(json.address());
+    }
 }

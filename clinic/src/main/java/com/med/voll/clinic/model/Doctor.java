@@ -1,6 +1,6 @@
 package com.med.voll.clinic.model;
 
-import com.med.voll.clinic.dto.DoctorDto;
+import com.med.voll.clinic.dto.doctor.DoctorDto;
 import com.med.voll.clinic.model.enums.Specialty;
 import jakarta.persistence.*;
 import lombok.*;

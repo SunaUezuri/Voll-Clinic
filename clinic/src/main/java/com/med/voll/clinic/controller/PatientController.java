@@ -1,6 +1,6 @@
 package com.med.voll.clinic.controller;
 
-import com.med.voll.clinic.dto.PatientDto;
+import com.med.voll.clinic.dto.patient.PatientDto;
 import com.med.voll.clinic.model.Patient;
 import com.med.voll.clinic.repository.PatientRepository;
 import jakarta.validation.Valid;

@@ -1,5 +1,6 @@
-package com.med.voll.clinic.dto;
+package com.med.voll.clinic.dto.patient;
 
+import com.med.voll.clinic.dto.address.AddressDto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

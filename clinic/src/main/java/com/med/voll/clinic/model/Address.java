@@ -1,10 +1,9 @@
 package com.med.voll.clinic.model;
 
-import com.med.voll.clinic.dto.AddressDto;
+import com.med.voll.clinic.dto.address.AddressDto;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 //Using annotatios for better perfomance and practicality

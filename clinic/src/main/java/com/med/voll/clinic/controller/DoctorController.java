@@ -28,7 +28,7 @@ public class DoctorController {
     }
 
     @GetMapping
-    public Page<DoctorGetDto> list(@PageableDefault(size = 10, sort = {"name"}) Pageable paginacao) {
-        return repository.findAll(paginacao).map(DoctorGetDto::new);
+    public Page<DoctorGetDto> list(@PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
+        return repository.findAll(pageable).map(DoctorGetDto::new);
     }
 }

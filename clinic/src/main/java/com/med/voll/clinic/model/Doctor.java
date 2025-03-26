@@ -7,13 +7,14 @@ import lombok.*;
 
 //Using annotatios for better perfomance and practicality
 /*
-* Loombok annotation gives a way to reduce
-* the amount of repetitive code, giving more practicality
-* and less time coding repetitive methods
-* such as getters, setters and constructors
-*/
+ * Loombok annotation gives a way to reduce
+ * the amount of repetitive code, giving more practicality
+ * and less time coding repetitive methods
+ * such as getters, setters and constructors
+ */
 @Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Entity @Table(name = "T_VOLL_DOCTOR")
 @SequenceGenerator(name = "doctor", sequenceName = "SQ_T_VOLL_DOCTOR", allocationSize = 1)
